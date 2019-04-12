@@ -16,7 +16,27 @@ const redirectFn = (url) => {
 	};
 };
 
+const Responses = {
+	Success: {
+		OK: {
+			result: "success",
+			message: "OK"
+		}
+	},
+	Failure: {
+		NotAuthorized: {
+			errorCode: "NotAuthorized",
+			errorMessage: "ApiToken Required."
+		},
+		InvalidToken: {
+			errorCode: "InvalidToken",
+			errorMessage: "Token is invalid. Renew token."
+		}
+	}
+};
+
 module.exports = {
 	ApiResponse: responseFn,
 	ApiRedirect: redirectFn,
+	Responses: Responses
 };

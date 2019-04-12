@@ -8,6 +8,10 @@ global.Logger = require('tracer').colorConsole(Config.Tracer.level);
 
 global.Rest = require('./helpers/rest.js');
 
+global.Middleware = {
+	"auth": require('./middlewares/auth')
+};
+
 const express = require('express');
 const app = express();
 
@@ -28,7 +32,7 @@ app.use(morgan(`dev`, {
 
 app.use('/docs', require('./routes/swagger'));
 
-app.use('/', require('./routes/v1/system'));
+app.use('/v1/', require('./routes/v1/system'));
 
 
 

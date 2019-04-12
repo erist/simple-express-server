@@ -43,7 +43,9 @@ const SystemController = require('../../controllers/v1/system');
  *                   type: integer
  *                   example: 1547449429756
  */
-router.get("/ping", Rest.ApiResponse(SystemController.ping));
-router.post("/ping", Rest.ApiResponse(SystemController.ping));
+router.get("/ping",
+	Rest.ApiResponse(SystemController.ping));
+router.post("/ping", Middleware.auth,
+	Rest.ApiResponse(SystemController.ping));
 
 module.exports = router;
