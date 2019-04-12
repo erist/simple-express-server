@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const SystemController = {
-	v1: require('./../controllers/v1/system')
-};
+const SystemController = require('../../controllers/v1/system');
 
 /**
  * @swagger
@@ -45,7 +43,7 @@ const SystemController = {
  *                   type: integer
  *                   example: 1547449429756
  */
-router.get("/v1/ping", Rest.ApiResponse(SystemController.v1.ping));
-router.post("/v1/ping", Rest.ApiResponse(SystemController.v1.ping));
+router.get("/ping", Rest.ApiResponse(SystemController.ping));
+router.post("/ping", Rest.ApiResponse(SystemController.ping));
 
 module.exports = router;

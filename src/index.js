@@ -28,7 +28,7 @@ app.use(morgan(`dev`, {
 
 app.use('/docs', require('./routes/swagger'));
 
-app.use('/', require('./routes/system'));
+app.use('/', require('./routes/v1/system'));
 
 
 
