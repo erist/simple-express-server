@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "tracer": "^0.9.8"
   },
   "devDependencies": {},
   "scripts": {
